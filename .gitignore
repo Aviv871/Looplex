@@ -10,6 +10,14 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+Ludum Dare 47/[Ll]ibrary/
+Ludum Dare 47/[Tt]emp/
+Ludum Dare 47/[Oo]bj/
+Ludum Dare 47/[Bb]uild/
+Ludum Dare 47/[Bb]uilds/
+Ludum Dare 47/[Ll]ogs/
+Ludum Dare 47/[Mm]emoryCaptures/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
@@ -21,6 +29,7 @@
 
 # Visual Studio cache directory
 .vs/
+.vscode/
 
 # Gradle cache directory
 .gradle/
