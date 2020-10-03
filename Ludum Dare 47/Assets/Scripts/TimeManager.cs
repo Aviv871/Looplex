@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class TimeManager : MonoBehaviour
 {
+    [SerializeField] private float screenCaptureInterval = 1f;
+
     public static TimeManager timeManagerInstance;
+
+    private float timeSinceLastCapture = 0f;
+    private int capturesCount = 0;
 
     // The action to be executated at the event, takes the delta since the wanted event time to now
     public delegate void TimeEventFunc(float timeDelta);
@@ -15,6 +21,15 @@ public class TimeManager : MonoBehaviour
         if (timeManagerInstance != null) Debug.LogError("More than 1 timeManagerInstance in scene! Use only one");
         timeManagerInstance = this;
         timeEvents.Clear();
+    }
+
+    private void Start()
+    {
+        DirectoryInfo di = new DirectoryInfo(Application.temporaryCachePath);
+        foreach (FileInfo file in di.GetFiles("capture*.png"))
+        {
+            file.Delete();
+        }
     }
 
     public void RegisterTimeEvent(float time, TimeEventFunc action)
@@ -34,6 +49,18 @@ public class TimeManager : MonoBehaviour
     private void Update()
     {
         HandleTimeEvents();
+        HandleScreenCaptures();
+    }
+
+    private void HandleScreenCaptures()
+    {
+        timeSinceLastCapture += Time.deltaTime;
+        if (timeSinceLastCapture > screenCaptureInterval)
+        {
+            timeSinceLastCapture = 0f;
+            capturesCount++;
+            ScreenCapture.CaptureScreenshot(Path.Combine(Application.temporaryCachePath, "capture" + capturesCount.ToString() + ".png"));
+        }
     }
 
     private void HandleTimeEvents()
