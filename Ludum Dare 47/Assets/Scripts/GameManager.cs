@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float captureShowDelay = 0.5f;
     [SerializeField] private Image captureShow = null;
     [SerializeField] private AudioSource captureShowSound = null;
+    [SerializeField] private AudioSource backgroundMusic = null;
     [SerializeField] private PlayerMovement playerMovement = null;
 
     private int loopsCount = 0;
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator SlideThrowCaptures(FileInfo[] captureFiles)
     {
         captureShow.enabled = true;
+        backgroundMusic.Stop();
         captureShowSound.Play();
         foreach (var capture in captureFiles)
         {
