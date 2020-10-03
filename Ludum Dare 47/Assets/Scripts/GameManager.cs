@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float loopLength = 180f;
     [SerializeField] private float captureShowDelay = 0.5f;
     [SerializeField] private Image captureShow = null;
+    [SerializeField] private AudioSource captureShowSound = null;
     [SerializeField] private PlayerMovement playerMovement = null;
 
     private int loopsCount = 0;
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator SlideThrowCaptures(FileInfo[] captureFiles)
     {
         captureShow.enabled = true;
+        captureShowSound.Play();
         foreach (var capture in captureFiles)
         {
             captureShow.sprite = Image2Sprite.LoadNewSprite(capture.FullName, 32);
