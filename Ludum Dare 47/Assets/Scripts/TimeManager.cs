@@ -33,10 +33,10 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        handleTimeEvents();
+        HandleTimeEvents();
     }
 
-    private void handleTimeEvents()
+    private void HandleTimeEvents()
     {
         List<float> keysToRemove = new List<float>();
 
