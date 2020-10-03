@@ -83,6 +83,12 @@ TextureImporter:
   - first:
       213: 9170301494444662949
     second: HallTilemap_13
+  - first:
+      213: 8534522348058291179
+    second: HallTilemap_13
+  - first:
+      213: -1498096987054120541
+    second: HallTilemap_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -456,6 +462,27 @@ TextureImporter:
       name: HallTilemap_13
       rect:
         serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beba5a39bd6b07670800000000000000
+      internalID: 8534522348058291179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HallTilemap_14
+      rect:
+        serializedVersion: 2
         x: 96
         y: 0
         width: 32
@@ -467,8 +494,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a0ab937f94734f70800000000000000
-      internalID: 9170301494444662949
+      spriteID: 3a16e8f3ab0b53be0800000000000000
+      internalID: -1498096987054120541
       vertices: []
       indices: 
       edges: []
