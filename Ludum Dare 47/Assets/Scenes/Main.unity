@@ -5350,7 +5350,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 511ae91d48b365240935dc8a4c2a0421,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 035124f96b058274ba7ec7770125813d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8b3879193a1a3f940b4fbd174e5aa180, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -12534,7 +12534,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 511ae91d48b365240935dc8a4c2a0421,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 1969f0761b77a0c4b8bb008cafab1dbd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7188634d3a11cbc45a0439a3766893d7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -12737,7 +12737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119cc7ea277cb28408eca377d34f7f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loopLength: 15
+  loopLength: 30
   captureShowDelay: 0.125
   captureShow: {fileID: 1351732988}
   captureShowSound: {fileID: 399433454}
