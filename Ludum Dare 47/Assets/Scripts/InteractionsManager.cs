@@ -20,9 +20,11 @@ public class InteractionsManager : MonoBehaviour
     {
         switch (objectName)
         {
-            case "a":
+            case "Table":
+                Debug.Log("Leave the table alone!");
                 break;
-            case "b":
+            case "Key":
+                Debug.Log("Very nice key!");
                 break;
             case "c":
                 break;

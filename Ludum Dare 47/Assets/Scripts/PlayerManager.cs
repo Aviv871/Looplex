@@ -7,10 +7,15 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float interactionDistance = 2f;
     [SerializeField] private InteractionsManager interactionsManager = null;
 
+    private void playerAfter3SecEvent(float timeDelta)
+    {
+        Debug.Log("Player says hello! Delta: " + timeDelta);
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
-
+        TimeManager.timeManagerInstance.RegisterTimeEvent(3f, playerAfter3SecEvent);
     }
 
     // Update is called once per frame
