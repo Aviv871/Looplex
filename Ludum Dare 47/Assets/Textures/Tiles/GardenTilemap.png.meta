@@ -77,6 +77,18 @@ TextureImporter:
   - first:
       213: -5469420869928580329
     second: GardenTilemap_8
+  - first:
+      213: 4492271789557169748
+    second: GardenTilemap_9
+  - first:
+      213: 6080446047337298338
+    second: GardenTilemap_10
+  - first:
+      213: -8554876779900493393
+    second: GardenTilemap_11
+  - first:
+      213: -3636791972803183023
+    second: GardenTilemap_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -366,69 +378,6 @@ TextureImporter:
       name: GardenTilemap_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bb0df10aa1cb0c60800000000000000
-      internalID: 7785529316761996209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GardenTilemap_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71d4c2c86e2c29f10800000000000000
-      internalID: 2275095057225501975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GardenTilemap_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d798cc74a97c0a90800000000000000
-      internalID: -7346363144773003306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GardenTilemap_12
-      rect:
-        serializedVersion: 2
         x: 0
         y: 0
         width: 32
@@ -440,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3db0dde5e2748cf30800000000000000
-      internalID: 4596001684217203667
+      spriteID: 45e301b3461c75e30800000000000000
+      internalID: 4492271789557169748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GardenTilemap_13
+      name: GardenTilemap_10
       rect:
         serializedVersion: 2
         x: 32
@@ -461,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2500e40c24ed8150800000000000000
-      internalID: 5876603966499849518
+      spriteID: 2a9b777e675126450800000000000000
+      internalID: 6080446047337298338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GardenTilemap_14
+      name: GardenTilemap_11
       rect:
         serializedVersion: 2
         x: 64
@@ -482,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ae296f6069463210800000000000000
-      internalID: 1312317019959930530
+      spriteID: fa12bc4f4e8f64980800000000000000
+      internalID: -8554876779900493393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GardenTilemap_15
+      name: GardenTilemap_12
       rect:
         serializedVersion: 2
         x: 96
@@ -503,8 +452,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 658f725c229b2ff80800000000000000
-      internalID: -8074187622934120362
+      spriteID: 15ef21328f4878dc0800000000000000
+      internalID: -3636791972803183023
       vertices: []
       indices: 
       edges: []
