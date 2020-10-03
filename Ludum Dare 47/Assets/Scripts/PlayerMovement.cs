@@ -26,6 +26,14 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
+    private void OnDisable()
+    {
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", 0);
+        animator.SetFloat("Speed", 0);
+        playerRigidbody.velocity = Vector2.zero;
+    }
+
     private void FixedUpdate()
     {
         playerRigidbody.velocity = movement * moveSpeed;

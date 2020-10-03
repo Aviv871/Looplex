@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image captureShow = null;
     [SerializeField] private AudioSource captureShowSound = null;
     [SerializeField] private AudioSource backgroundMusic = null;
+    [SerializeField] private AudioSource stopedSound = null;
     [SerializeField] private PlayerMovement playerMovement = null;
 
     private int loopsCount = 0;
@@ -50,8 +51,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SlideThrowCaptures(FileInfo[] captureFiles)
     {
-        captureShow.enabled = true;
         backgroundMusic.Stop();
+        stopedSound.Play();
+        yield return new WaitForSeconds(1.5f);
+
+        captureShow.enabled = true;
         captureShowSound.Play();
         foreach (var capture in captureFiles)
         {
@@ -59,6 +63,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(captureShowDelay);
         }
 
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

@@ -25,6 +25,9 @@ public class TimeManager : MonoBehaviour
 
     private void Start()
     {
+        // This make sure there will be a snapshot on the very beginning
+        timeSinceLastCapture = screenCaptureInterval + 1;
+
         DirectoryInfo di = new DirectoryInfo(Application.temporaryCachePath);
         foreach (FileInfo file in di.GetFiles("capture*.png"))
         {
