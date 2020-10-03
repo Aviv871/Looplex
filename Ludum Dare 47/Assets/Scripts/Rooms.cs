@@ -24,6 +24,7 @@ public class Rooms : MonoBehaviour
 
     public void TransitToRoom(RoomTransitionWaypointData roomData)
     {
+        Debug.Log("Transiting to room: " + roomData.roomToTransitTo.ToString());
         currentRoom = roomData.roomToTransitTo;
         mainCamara.transform.position = roomData.newCamaraPosistion;
         player.transform.position = roomData.newPlayerPosistion;

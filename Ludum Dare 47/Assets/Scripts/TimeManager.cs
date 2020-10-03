@@ -47,6 +47,7 @@ public class TimeManager : MonoBehaviour
                 keysToRemove.Add(item.Key);
                 foreach (var action in item.Value)
                 {
+                    Debug.Log("Time event triggered, current time: " + Time.timeSinceLevelLoad);
                     action(Time.timeSinceLevelLoad - item.Key);
                 }
             }

@@ -35,7 +35,11 @@ public class PlayerManager : MonoBehaviour
             float distance = Vector2.Distance(gameObject.transform.position, intractable.transform.position);
             if (distance < interactionDistance)
             {
+                Debug.Log("Player intraction with " + intractable.name);
                 interactionsManager.ExecuteInteraction(intractable.name, distance);
+
+                // If for some reason there are 2 very close intractables we want to handle only one
+                break;
             }
         }
     }

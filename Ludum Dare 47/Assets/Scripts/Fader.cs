@@ -24,6 +24,7 @@ public class Fader : MonoBehaviour
 
     public void FadeTo(string scene)
     {
+        Debug.Log("Fading to scene: " + scene);
         StartCoroutine(FadeOut(scene));
     }
 
