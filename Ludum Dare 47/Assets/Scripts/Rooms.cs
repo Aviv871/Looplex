@@ -13,7 +13,8 @@ public class Rooms : MonoBehaviour
     public enum GameRooms
     {
         HALL,
-        GARDEN
+        GARDEN,
+        KITCHEN
     }
 
     private void Awake()
