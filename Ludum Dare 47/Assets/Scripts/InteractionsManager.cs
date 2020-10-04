@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InteractionsManager : MonoBehaviour
 {
+    [SerializeField] private Inventory playerInventory = null;
+
     private bool yellowLeverState = false;
     private bool whiteLeverState = false;
     private bool pinkLeverState = false;
@@ -29,30 +31,53 @@ public class InteractionsManager : MonoBehaviour
                 Debug.Log("Leave the table alone!");
                 // TOOD: Display clue GUI
                 break;
+
             case "HallTable":
                 Debug.Log("Leave the table alone!");
                 // TOOD: Display clue GUI
                 break;
+
             case "Key":
-                Debug.Log("Very nice key!");
-                // TODO: pick up to inventory
+                playerInventory.AddItem(Inventory.InventoryItem.KEY);
+                Destroy(interactionGameObject);
+                // TODO: pickup sound here
                 break;
+
+            case "Chest":
+                Chest chestComp = interactionGameObject.GetComponent<Chest>();
+                if (chestComp.IsOpen())
+                {
+                    // TOOD: Display clue GUI
+                }
+                else
+                {
+                    if (playerInventory.DoesExist(Inventory.InventoryItem.KEY))
+                    {
+                        chestComp.Open();
+                    }
+                }
+                break;
+
             case "LeverYellow":
                 yellowLeverState = !yellowLeverState;
                 HandleLeverSwitch(interactionGameObject);
                 break;
+
             case "LeverWhite":
                 whiteLeverState = !whiteLeverState;
                 HandleLeverSwitch(interactionGameObject);
                 break;
+
             case "LeverPink":
                 pinkLeverState = !pinkLeverState;
                 HandleLeverSwitch(interactionGameObject);
                 break;
+
             case "LeverEmpty":
                 emptyLeverState = !emptyLeverState;
                 HandleLeverSwitch(interactionGameObject);
                 break;
+
         }
     }
 
