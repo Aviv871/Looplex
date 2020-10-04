@@ -78,6 +78,22 @@ public class InteractionsManager : MonoBehaviour
                 HandleLeverSwitch(interactionGameObject);
                 break;
 
+            case "Stick":
+                playerInventory.AddItem(Inventory.InventoryItem.STICK);
+                Destroy(interactionGameObject);
+                // TODO: pickup sound here
+                break;
+
+            case "Dog":
+                Dog dogComp = interactionGameObject.GetComponent<Dog>();
+                if (!dogComp.IsHappy())
+                {
+                    if (playerInventory.DoesExist(Inventory.InventoryItem.STICK))
+                    {
+                        dogComp.FetchStick();
+                    }
+                }
+                break;
         }
     }
 
@@ -94,6 +110,8 @@ public class InteractionsManager : MonoBehaviour
         if (yellowLeverState && pinkLeverState && !whiteLeverState && emptyLeverState)
         {
             Debug.Log("Levers in right config!");
+            // TODO: door open sound here
+
         }
     }
 }
