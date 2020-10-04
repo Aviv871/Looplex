@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc1f69488f8ca764aae2aab79338a6aa, type: 3}
-  m_Name: ToHall
+  m_Name: ToHallFromKitchen
   m_EditorClassIdentifier: 
   roomToTransitTo: 0
-  newCamaraPosistion: {x: 0, y: 1, z: -10}
-  newPlayerPosistion: {x: 11.5, y: 0.5, z: -1}
+  newCamaraPosistion: {x: 0, y: 0, z: 0}
+  newPlayerPosistion: {x: 0, y: 0, z: 0}
