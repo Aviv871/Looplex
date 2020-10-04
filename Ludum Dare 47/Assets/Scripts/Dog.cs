@@ -6,6 +6,9 @@ public class Dog : MonoBehaviour
 {
     [SerializeField] private GameObject clueBelowDog = null;
 
+    [SerializeField] private AudioSource dogBarkingSound = null;
+    [SerializeField] private AudioSource dogHappySound = null;
+
     private bool isHappy = false;
     private Vector3 wantedPosition;
     private Vector3 velocity = Vector3.zero;
@@ -15,7 +18,7 @@ public class Dog : MonoBehaviour
 
     public void FetchStick()
     {
-        // TODO: sound here
+        dogHappySound.Play();
         isHappy = true;
         clueBelowDog.SetActive(true);
         wantedPosition = locationAfterStick;

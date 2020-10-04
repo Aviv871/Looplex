@@ -10,6 +10,7 @@ public class ClueDisplay : MonoBehaviour
 
     [SerializeField] private Sprite flowerLeverSoultion = null;
     [SerializeField] private Sprite whereToStand = null;
+    [SerializeField] private Sprite barkStick = null;
     [SerializeField] private Sprite orderOfDigits = null;
     [SerializeField] private Sprite booksCloseup = null;
 
@@ -17,6 +18,7 @@ public class ClueDisplay : MonoBehaviour
     {
         FLOWER_LEVER_SOULTION,
         WHERE_TO_STAND,
+        BARK_STICK,
         ORDER_OF_DIGITS,
         BOOKS_CLOSEUP,
     }
@@ -38,6 +40,9 @@ public class ClueDisplay : MonoBehaviour
                 break;
             case ClueDisplayType.WHERE_TO_STAND:
                 clueContainer.sprite = whereToStand;
+                break;
+            case ClueDisplayType.BARK_STICK:
+                clueContainer.sprite = barkStick;
                 break;
             case ClueDisplayType.ORDER_OF_DIGITS:
                 clueContainer.sprite = orderOfDigits;

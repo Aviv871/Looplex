@@ -23,7 +23,7 @@ public class InteractionsManager : MonoBehaviour
             case "GardenTable":
                 Debug.Log("Leave the table alone!");
                 tableSound.Play();
-                clueDisplay.Show(ClueDisplay.ClueDisplayType.WHERE_TO_STAND);
+                clueDisplay.Show(ClueDisplay.ClueDisplayType.BARK_STICK);
                 break;
 
             case "HallTable":
