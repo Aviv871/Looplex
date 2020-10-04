@@ -25,12 +25,6 @@ public class GameManager : MonoBehaviour
         TimeManager.timeManagerInstance.RegisterTimeEvent(loopLength, endOfLoopEvent);
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-
-    }
-
     private void endOfLoopEvent(float timeDelta)
     {
         Debug.Log("End of loop");
@@ -63,7 +57,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(captureShowDelay);
         }
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.75f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

@@ -6,6 +6,7 @@ public class InteractionsManager : MonoBehaviour
 {
     [SerializeField] private Door leversDoor = null;
     [SerializeField] private Inventory playerInventory = null;
+    [SerializeField] private ClueDisplay clueDisplay = null;
     [SerializeField] private AudioSource leverSound = null;
     [SerializeField] private AudioSource pickupSound = null;
     [SerializeField] private AudioSource tableSound = null;
@@ -15,18 +16,6 @@ public class InteractionsManager : MonoBehaviour
     private bool pinkLeverState = false;
     private bool emptyLeverState = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void ExecuteInteraction(GameObject interactionGameObject, float distanceTo)
     {
         switch (interactionGameObject.name)
@@ -34,13 +23,17 @@ public class InteractionsManager : MonoBehaviour
             case "GardenTable":
                 Debug.Log("Leave the table alone!");
                 tableSound.Play();
-                // TODO: Display clue GUI
+                clueDisplay.Show(ClueDisplay.ClueDisplayType.WHERE_TO_STAND);
                 break;
 
             case "HallTable":
                 Debug.Log("Leave the table alone!");
                 tableSound.Play();
-                // TODO: Display clue GUI
+                clueDisplay.Show(ClueDisplay.ClueDisplayType.WHERE_TO_STAND);
+                break;
+
+            case "ClueBelowDog":
+                clueDisplay.Show(ClueDisplay.ClueDisplayType.ORDER_OF_DIGITS);
                 break;
 
             case "Key":
@@ -53,7 +46,7 @@ public class InteractionsManager : MonoBehaviour
                 Chest chestComp = interactionGameObject.GetComponent<Chest>();
                 if (chestComp.IsOpen())
                 {
-                    // TODO: Display clue GUI
+                    clueDisplay.Show(ClueDisplay.ClueDisplayType.FLOWER_LEVER_SOULTION);
                 }
                 else
                 {
