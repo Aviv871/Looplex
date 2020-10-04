@@ -93,6 +93,43 @@ public class InteractionsManager : MonoBehaviour
                     }
                 }
                 break;
+
+            case "BrownBook":
+                playerInventory.AddItem(Inventory.InventoryItem.BROWN_BOOK);
+                Destroy(interactionGameObject);
+                pickupSound.Play();
+                break;
+
+            case "BlueBook":
+                playerInventory.AddItem(Inventory.InventoryItem.BLUE_BOOK);
+                Destroy(interactionGameObject);
+                pickupSound.Play();
+                break;
+
+            case "RedBook":
+                playerInventory.AddItem(Inventory.InventoryItem.RED_BOOK);
+                Destroy(interactionGameObject);
+                pickupSound.Play();
+                break;
+
+            case "Bookshelf":
+                Bookshelf bookshelfComp = interactionGameObject.GetComponent<Bookshelf>();
+                if (bookshelfComp.IsFull())
+                {
+                    Debug.Log("Bookshelf full!");
+                    tableSound.Play();
+                    clueDisplay.Show(ClueDisplay.ClueDisplayType.BOOKS_CLOSEUP);
+                }
+                else
+                {
+                    Inventory.InventoryItem book = playerInventory.GetBook();
+                    if (book != Inventory.InventoryItem.NULL)
+                    {
+                        playerInventory.RemoveItem(book);
+                        bookshelfComp.AddBook(book);
+                    }
+                }
+                break;
         }
     }
 

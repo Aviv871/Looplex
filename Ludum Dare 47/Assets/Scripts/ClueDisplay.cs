@@ -11,12 +11,14 @@ public class ClueDisplay : MonoBehaviour
     [SerializeField] private Sprite flowerLeverSoultion = null;
     [SerializeField] private Sprite whereToStand = null;
     [SerializeField] private Sprite orderOfDigits = null;
+    [SerializeField] private Sprite booksCloseup = null;
 
     public enum ClueDisplayType
     {
         FLOWER_LEVER_SOULTION,
         WHERE_TO_STAND,
-        ORDER_OF_DIGITS
+        ORDER_OF_DIGITS,
+        BOOKS_CLOSEUP,
     }
 
     private void Update()
@@ -39,6 +41,9 @@ public class ClueDisplay : MonoBehaviour
                 break;
             case ClueDisplayType.ORDER_OF_DIGITS:
                 clueContainer.sprite = orderOfDigits;
+                break;
+            case ClueDisplayType.BOOKS_CLOSEUP:
+                clueContainer.sprite = booksCloseup;
                 break;
         }
         clueDisplay.SetActive(true);

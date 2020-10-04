@@ -10,8 +10,8 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private Sprite keySprite = null;
     [SerializeField] private Sprite blueBookSprite = null;
-    [SerializeField] private Sprite BlackBookSprite = null;
-    [SerializeField] private Sprite greenBookSprite = null;
+    [SerializeField] private Sprite brownBookSprite = null;
+    [SerializeField] private Sprite redBookSprite = null;
     [SerializeField] private Sprite stickSprite = null;
 
     public enum InventoryItem
@@ -20,15 +20,22 @@ public class Inventory : MonoBehaviour
         KEY,
         STICK,
         BLUE_BOOK,
-        BLACK_BOOK,
-        GREEN_BOOK
+        BROWN_BOOK,
+        RED_BOOK
     }
 
     public void AddItem(InventoryItem item)
     {
-        Debug.Log(item.ToString() + " added to the inventory");
-        currentInventory.Add(item);
-        UpdateIventoryGUI();
+        if (!DoesExist(item))
+        {
+            Debug.Log(item.ToString() + " added to the inventory");
+            currentInventory.Add(item);
+            UpdateIventoryGUI();
+        }
+        else
+        {
+            Debug.Log("Item already in inventory");
+        }
     }
 
     public void RemoveItem(InventoryItem item)
@@ -42,6 +49,23 @@ public class Inventory : MonoBehaviour
     {
         InventoryItem result = currentInventory.Find(x => x == item);
         return result != InventoryItem.NULL;
+    }
+
+    public InventoryItem GetBook()
+    {
+        if (DoesExist(InventoryItem.RED_BOOK))
+        {
+            return InventoryItem.RED_BOOK;
+        }
+        else if (DoesExist(InventoryItem.BROWN_BOOK))
+        {
+            return InventoryItem.BROWN_BOOK;
+        }
+        else if (DoesExist(InventoryItem.BLUE_BOOK))
+        {
+            return InventoryItem.BLUE_BOOK;
+        }
+        return InventoryItem.NULL;
     }
 
     private void UpdateIventoryGUI()
@@ -67,7 +91,7 @@ public class Inventory : MonoBehaviour
             }
 
             inventorySlots[i].GetComponent<Image>().enabled = false;
-            inventorySlots[i].GetComponentInChildren<Image>().enabled = false;
+            inventorySlots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
         }
     }
 
@@ -79,12 +103,12 @@ public class Inventory : MonoBehaviour
                 return keySprite;
             case (InventoryItem.STICK):
                 return stickSprite;
-            case (InventoryItem.BLACK_BOOK):
-                return BlackBookSprite;
+            case (InventoryItem.RED_BOOK):
+                return redBookSprite;
             case (InventoryItem.BLUE_BOOK):
                 return blueBookSprite;
-            case (InventoryItem.GREEN_BOOK):
-                return greenBookSprite;
+            case (InventoryItem.BROWN_BOOK):
+                return brownBookSprite;
             default:
                 return null;
         }
