@@ -12,6 +12,7 @@ public class Door : MonoBehaviour
     public void Open()
     {
         doorOpenSound.Play();
+        GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().sprite = openSprite;
         isOpen = true;
     }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ToHallFromKitchen
   m_EditorClassIdentifier: 
   roomToTransitTo: 0
-  newCamaraPosistion: {x: 0, y: 0, z: 0}
-  newPlayerPosistion: {x: 0, y: 0, z: 0}
+  newCamaraPosistion: {x: 0, y: 1, z: -10}
+  newPlayerPosistion: {x: 0, y: 9, z: -1}
