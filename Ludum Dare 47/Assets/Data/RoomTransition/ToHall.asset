@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomToTransitTo: 0
   newCamaraPosistion: {x: 0, y: 1, z: -10}
-  newPlayerPosistion: {x: 20, y: -6, z: -1}
+  newPlayerPosistion: {x: 11.5, y: 0.5, z: -1}

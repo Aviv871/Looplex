@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class InteractionsManager : MonoBehaviour
 {
+    private bool yellowLeverState = false;
+    private bool whiteLeverState = false;
+    private bool pinkLeverState = false;
+    private bool emptyLeverState = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +21,54 @@ public class InteractionsManager : MonoBehaviour
 
     }
 
-    public void ExecuteInteraction(GameObject gameObject, float distanceTo)
+    public void ExecuteInteraction(GameObject interactionGameObject, float distanceTo)
     {
-        switch (gameObject.name)
+        switch (interactionGameObject.name)
         {
-            case "Table":
+            case "GardenTable":
                 Debug.Log("Leave the table alone!");
+                // TOOD: Display clue GUI
+                break;
+            case "HallTable":
+                Debug.Log("Leave the table alone!");
+                // TOOD: Display clue GUI
                 break;
             case "Key":
                 Debug.Log("Very nice key!");
+                // TODO: pick up to inventory
                 break;
-            case "c":
+            case "LeverYellow":
+                yellowLeverState = !yellowLeverState;
+                HandleLeverSwitch(interactionGameObject);
                 break;
+            case "LeverWhite":
+                whiteLeverState = !whiteLeverState;
+                HandleLeverSwitch(interactionGameObject);
+                break;
+            case "LeverPink":
+                pinkLeverState = !pinkLeverState;
+                HandleLeverSwitch(interactionGameObject);
+                break;
+            case "LeverEmpty":
+                emptyLeverState = !emptyLeverState;
+                HandleLeverSwitch(interactionGameObject);
+                break;
+        }
+    }
+
+    private void HandleLeverSwitch(GameObject lever)
+    {
+        Debug.Log(lever.name);
+        lever.transform.localScale = new Vector3(lever.transform.localScale.x * -1, lever.transform.localScale.y, lever.transform.localScale.z);
+        // TODO: lever sound here
+        CheckLeversSolution();
+    }
+
+    private void CheckLeversSolution()
+    {
+        if (yellowLeverState && pinkLeverState && !whiteLeverState && emptyLeverState)
+        {
+            Debug.Log("Levers in right config!");
         }
     }
 }
