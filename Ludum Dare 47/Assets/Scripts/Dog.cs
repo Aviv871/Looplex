@@ -9,6 +9,7 @@ public class Dog : MonoBehaviour
     private bool isHappy = false;
     private Vector3 wantedPosition;
     private Vector3 velocity = Vector3.zero;
+    
     [SerializeField] private float moveSpeed = 0.3F;
     [SerializeField] private Vector3 locationAfterStick = Vector3.zero;
 

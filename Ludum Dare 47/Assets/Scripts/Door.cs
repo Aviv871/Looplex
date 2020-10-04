@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chest : MonoBehaviour
+public class Door : MonoBehaviour
 {
     [SerializeField] private Sprite openSprite = null;
-    [SerializeField] private AudioSource chestOpenSound = null;
+    [SerializeField] private AudioSource doorOpenSound = null;
 
     private bool isOpen = false;
 
     public void Open()
     {
-        chestOpenSound.Play();
+        doorOpenSound.Play();
         GetComponent<SpriteRenderer>().sprite = openSprite;
         isOpen = true;
     }
