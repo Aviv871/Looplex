@@ -8,6 +8,7 @@ public class ClueDisplay : MonoBehaviour
     [SerializeField] private GameObject clueDisplay = null;
     [SerializeField] private Image clueContainer = null;
 
+    [Header("Clues Assets")]
     [SerializeField] private Sprite flowerLeverSoultion = null;
     [SerializeField] private Sprite whereToStand = null;
     [SerializeField] private Sprite barkStick = null;
