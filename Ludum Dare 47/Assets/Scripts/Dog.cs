@@ -19,6 +19,7 @@ public class Dog : MonoBehaviour
         isHappy = true;
         clueBelowDog.SetActive(true);
         wantedPosition = locationAfterStick;
+        GetComponent<Animator>().SetTrigger("DogStickTrigger");
     }
 
     public bool IsHappy()
