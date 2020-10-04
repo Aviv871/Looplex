@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour
             if (distance < interactionDistance)
             {
                 Debug.Log("Player intraction with " + intractable.name);
-                interactionsManager.ExecuteInteraction(intractable.name, distance);
+                interactionsManager.ExecuteInteraction(intractable.gameObject, distance);
 
                 // If for some reason there are 2 very close intractables we want to handle only one
                 break;

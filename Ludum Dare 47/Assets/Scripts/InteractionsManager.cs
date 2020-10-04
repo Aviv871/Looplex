@@ -16,9 +16,9 @@ public class InteractionsManager : MonoBehaviour
 
     }
 
-    public void ExecuteInteraction(string objectName, float distanceTo)
+    public void ExecuteInteraction(GameObject gameObject, float distanceTo)
     {
-        switch (objectName)
+        switch (gameObject.name)
         {
             case "Table":
                 Debug.Log("Leave the table alone!");
