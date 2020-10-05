@@ -86,4 +86,9 @@ public class GameManager : MonoBehaviour
             return 0;
         }
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
