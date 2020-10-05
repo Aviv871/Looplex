@@ -7833,6 +7833,7 @@ GameObject:
   - component: {fileID: 738777144}
   - component: {fileID: 738777146}
   - component: {fileID: 738777145}
+  - component: {fileID: 738777147}
   m_Layer: 5
   m_Name: EndDisplay
   m_TagString: Untagged
@@ -7898,6 +7899,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738777143}
   m_CullTransparentMesh: 0
+--- !u!114 &738777147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738777143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45990e0541e485940b6c591be635ed70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 738777145}
+  - {fileID: 1699967153}
+  texts:
+  - {fileID: 1761437477}
 --- !u!1001 &761421228
 PrefabInstance:
   m_ObjectHideFlags: 0
