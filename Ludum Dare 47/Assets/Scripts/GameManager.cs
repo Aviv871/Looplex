@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     private void endOfLoopEvent(float timeDelta)
     {
         Debug.Log("End of loop");
+        TimeManager.timeManagerInstance.SetActive(false);
         playerMovement.enabled = false;
         StaticManager.loopsCount++;
         ShowLoopPast();
