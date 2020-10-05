@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
         }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            endOfLoopEvent(0);
+        }
     }
 
     private void endOfLoopEvent(float timeDelta)

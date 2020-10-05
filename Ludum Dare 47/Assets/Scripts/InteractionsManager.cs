@@ -173,7 +173,7 @@ public class InteractionsManager : MonoBehaviour
 
     private void CheckDigitsSolution()
     {
-        if (digitBoard1Value == 3 && digitBoard2Value == 8 && digitBoard3Value == 7)
+        if (digitBoard1Value == 3 && digitBoard2Value == 8 && digitBoard3Value == 6)
         {
             Debug.Log("Digits in right config!");
             TimeManager.timeManagerInstance.SetActive(false);
@@ -186,7 +186,7 @@ public class InteractionsManager : MonoBehaviour
 
     private void CheckLeversSolution()
     {
-        if (yellowLeverState && pinkLeverState && !whiteLeverState && emptyLeverState)
+        if (yellowLeverState && !pinkLeverState && whiteLeverState && emptyLeverState)
         {
             Debug.Log("Levers in right config!");
             leversDoor.Open();
