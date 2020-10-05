@@ -1,5 +1,5 @@
 # Looplex
-Our Ludum Dare 47 entry :tada:  
+Our Ludum Dare 47 (Theme: Stuck in a loop) entry :tada:  
 [Ludum Dare entry page](https://ldjam.com/events/ludum-dare/47/looplex)
   
 ## Setting
