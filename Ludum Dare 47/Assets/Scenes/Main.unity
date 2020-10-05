@@ -20852,8 +20852,7 @@ MonoBehaviour:
     type: 3}
   whereToStand: {fileID: 21300000, guid: 25ce20d4a1066c94593dc791396cc826, type: 3}
   barkStick: {fileID: 21300000, guid: ad9ead0ae25c730499affb9f18071c00, type: 3}
-  orderOfDigits: {fileID: -264307652651892940, guid: 7233e37bc685a144bb4439249d5a0cbe,
-    type: 3}
+  orderOfDigits: {fileID: 21300000, guid: bc54703dfc48e334aaeb7a54209f1002, type: 3}
   booksCloseup: {fileID: 21300000, guid: 41b336a9ed66d8547a6e3d4a20dd85d8, type: 3}
 --- !u!1001 &5712310795993390959
 PrefabInstance:
