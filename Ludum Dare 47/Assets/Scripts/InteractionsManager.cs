@@ -16,6 +16,10 @@ public class InteractionsManager : MonoBehaviour
     private bool pinkLeverState = false;
     private bool emptyLeverState = false;
 
+    private int digitBoard1Value = 0;
+    private int digitBoard2Value = 0;
+    private int digitBoard3Value = 0;
+
     public void ExecuteInteraction(GameObject interactionGameObject, float distanceTo)
     {
         switch (interactionGameObject.name)
@@ -131,15 +135,44 @@ public class InteractionsManager : MonoBehaviour
                     }
                 }
                 break;
+
+            case "DigitBoard1":
+                digitBoard1Value = interactionGameObject.GetComponent<DigitBoard>().IncreaseValue();
+                HandleDigitBoardACtion();
+                break;
+
+            case "DigitBoard2":
+                digitBoard2Value = interactionGameObject.GetComponent<DigitBoard>().IncreaseValue();
+                HandleDigitBoardACtion();
+                break;
+
+            case "DigitBoard3":
+                digitBoard3Value = interactionGameObject.GetComponent<DigitBoard>().IncreaseValue();
+                HandleDigitBoardACtion();
+                break;
         }
     }
 
     private void HandleLeverSwitch(GameObject lever)
     {
-        Debug.Log(lever.name);
         lever.transform.localScale = new Vector3(lever.transform.localScale.x * -1, lever.transform.localScale.y, lever.transform.localScale.z);
         leverSound.Play();
         CheckLeversSolution();
+    }
+
+    private void HandleDigitBoardACtion()
+    {
+        leverSound.Play();
+        CheckDigitsSolution();
+    }
+
+    private void CheckDigitsSolution()
+    {
+        if (digitBoard1Value == 3 && digitBoard2Value == 8 && digitBoard3Value == 7)
+        {
+            Debug.Log("Digits in right config!");
+            // TODO: Ending
+        }
     }
 
     private void CheckLeversSolution()
