@@ -6441,6 +6441,8 @@ MonoBehaviour:
   clueBelowDog: {fileID: 1222126015}
   dogBarkingSound: {fileID: 287115212}
   dogHappySound: {fileID: 766527291}
+  breakingTime: 7
+  endOfStickWindowTime: 9
   moveSpeed: 0.3
   locationAfterStick: {x: 7.5, y: -2.5, z: -2}
 --- !u!1 &637396217

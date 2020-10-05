@@ -85,10 +85,11 @@ public class InteractionsManager : MonoBehaviour
 
             case "Dog":
                 Dog dogComp = interactionGameObject.GetComponent<Dog>();
-                if (!dogComp.IsHappy())
+                if (!dogComp.IsHappy() && dogComp.CanReceiveStick())
                 {
                     if (playerInventory.DoesExist(Inventory.InventoryItem.STICK))
                     {
+                        playerInventory.RemoveItem(Inventory.InventoryItem.STICK);
                         dogComp.FetchStick();
                     }
                 }
