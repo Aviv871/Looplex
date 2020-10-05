@@ -15,6 +15,7 @@ Try to get out and stop the time paradox by solving the various riddles.
 - A,S,W,D or the arrow keys to control the player
 - Space to interact with things (pick them up, look at them, etc..)
 - Mouse for menus
+- R to restart the loop
   
 ## Building
 Clone localy, and build using unity engine v2019.4.11.
