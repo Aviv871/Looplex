@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionsManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class InteractionsManager : MonoBehaviour
     [SerializeField] private Inventory playerInventory = null;
     [SerializeField] private ClueDisplay clueDisplay = null;
     [SerializeField] private Core coreObject = null;
+    [SerializeField] private Text endULoopCount = null;
     [SerializeField] private AudioSource leverSound = null;
     [SerializeField] private AudioSource pickupSound = null;
     [SerializeField] private AudioSource tableSound = null;
@@ -178,6 +180,7 @@ public class InteractionsManager : MonoBehaviour
             Debug.Log("Digits in right config!");
             TimeManager.timeManagerInstance.SetActive(false);
             mainMusic.Stop();
+            player.GetComponent<PlayerManager>().enabled = false;
             coreOffSound.Play();
             coreObject.SetCoreOff();
             StartCoroutine(ShowEndUI());
@@ -198,5 +201,6 @@ public class InteractionsManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         player.SetActive(false);
         endUIObject.SetActive(true);
+        endULoopCount.text = endULoopCount.text + StaticManager.loopsCount.ToString();
     }
 }

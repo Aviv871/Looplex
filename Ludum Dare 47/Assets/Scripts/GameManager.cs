@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource stopedSound = null;
     [SerializeField] private PlayerMovement playerMovement = null;
 
-    private int loopsCount = 0;
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -41,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("End of loop");
         playerMovement.enabled = false;
-        loopsCount++;
+        StaticManager.loopsCount++;
         ShowLoopPast();
     }
 
