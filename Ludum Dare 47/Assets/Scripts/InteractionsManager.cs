@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class InteractionsManager : MonoBehaviour
 {
+    [SerializeField] private GameObject endUIObject = null;
+    [SerializeField] private GameObject player = null;
     [SerializeField] private Door leversDoor = null;
     [SerializeField] private Inventory playerInventory = null;
     [SerializeField] private ClueDisplay clueDisplay = null;
+    [SerializeField] private Core coreObject = null;
     [SerializeField] private AudioSource leverSound = null;
     [SerializeField] private AudioSource pickupSound = null;
     [SerializeField] private AudioSource tableSound = null;
+    [SerializeField] private AudioSource coreOffSound = null;
+    [SerializeField] private AudioSource mainMusic = null;
 
     private bool yellowLeverState = false;
     private bool whiteLeverState = false;
@@ -171,7 +176,11 @@ public class InteractionsManager : MonoBehaviour
         if (digitBoard1Value == 3 && digitBoard2Value == 8 && digitBoard3Value == 7)
         {
             Debug.Log("Digits in right config!");
-            // TODO: Ending
+            TimeManager.timeManagerInstance.SetActive(false);
+            mainMusic.Stop();
+            coreOffSound.Play();
+            coreObject.SetCoreOff();
+            StartCoroutine(ShowEndUI());
         }
     }
 
@@ -182,5 +191,12 @@ public class InteractionsManager : MonoBehaviour
             Debug.Log("Levers in right config!");
             leversDoor.Open();
         }
+    }
+
+    private IEnumerator ShowEndUI()
+    {
+        yield return new WaitForSeconds(5f);
+        player.SetActive(false);
+        endUIObject.SetActive(true);
     }
 }

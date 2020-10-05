@@ -11,6 +11,7 @@ public class TimeManager : MonoBehaviour
 
     private float timeSinceLastCapture = 0f;
     private int capturesCount = 0;
+    private bool active = true;
 
     // The action to be executated at the event, takes the delta since the wanted event time to now
     public delegate void TimeEventFunc(float timeDelta);
@@ -48,11 +49,19 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    public void SetActive(bool state)
+    {
+        active = state;
+    }
+
     // Update is called once per frame
     private void Update()
     {
-        HandleTimeEvents();
-        HandleScreenCaptures();
+        if (active)
+        {
+            HandleTimeEvents();
+            HandleScreenCaptures();
+        }
     }
 
     private void HandleScreenCaptures()

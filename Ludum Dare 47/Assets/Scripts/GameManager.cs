@@ -25,6 +25,14 @@ public class GameManager : MonoBehaviour
         TimeManager.timeManagerInstance.RegisterTimeEvent(loopLength, endOfLoopEvent);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Home))
+        {
+            SceneManager.LoadScene("Menu");
+        }
+    }
+
     private void endOfLoopEvent(float timeDelta)
     {
         Debug.Log("End of loop");
